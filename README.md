@@ -2,7 +2,7 @@
 
 A minimal S.T.A.L.K.E.R. Anomaly DLTX compatibility addon for the AK-101 from Frosty's Escape From Tarkov Rifle Pack.
 
-The addon preserves Modular Attachment System scopes while compensating its AK-101 ADS coordinates for Frosty's HUD model. It also restores the MAS base attachment transform after 3DSS EFT Reposition overrides. It patches only `wpn_ak101_hud`; it does not replace weapon models, animations, sounds, scopes, balance values, or files from its dependencies.
+The addon preserves Modular Attachment System/PUSSY scopes while compensating the AK-101 ADS coordinates for Frosty's HUD model. It keeps the AK-101 attachment base expected by 3DSS EFT Reposition and compensates the unscoped aim transform so iron-sight ADS still resolves to Frosty's native coordinates. It patches only `wpn_ak101_hud`; it does not replace weapon models, animations, sounds, scopes, balance values, or files from its dependencies.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ The addon contains one DLTX section override:
 ![wpn_ak101_hud]
 ```
 
-It restores the four MAS `attach_base_hud_offset_*` values and supplies four compensated `aim_hud_offset_*` values. Modded Exes adds these transforms while modular attachments are active; their resolved sum matches Frosty's native AK-101 ADS. No other weapon or HUD section is modified.
+It preserves the four 3DSS EFT Reposition `attach_base_hud_offset_*` values used by dynamic scopes and supplies four compensated `aim_hud_offset_*` values. Modded Exes adds the base and aim transforms when no scope is attached; their resolved sum matches Frosty's native AK-101 ADS. With a scope attached, PUSSY/MAS keeps using its own scope-specific offsets against the expected reposition base. No other weapon, scope, or HUD section is modified.
 
 ## Branching
 
