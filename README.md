@@ -1,14 +1,17 @@
-# &lt;Addon Name&gt;
+# Frosty AK Integration
 
-Short description of the addon.
+A minimal S.T.A.L.K.E.R. Anomaly DLTX compatibility addon for the AK-101 from Frosty's Escape From Tarkov Rifle Pack.
 
-This repository is a template for small, independent S.T.A.L.K.E.R. Anomaly addons. Replace the placeholders, add the addon files under `gamedata`, and develop the mod without a separate build system.
+The addon restores Frosty's AK-101 iron-sight ADS offsets while keeping the Modular Attachment System base attachment transform. It patches only `wpn_ak101_hud`; it does not replace weapon models, animations, sounds, scopes, balance values, or files from its dependencies.
 
 ## Requirements
 
 - S.T.A.L.K.E.R. Anomaly 1.5.3
-- [Anomaly Modded Exes](https://github.com/themrdemonized/xray-monolith) when the addon uses DLTX or another engine extension
-- Git LFS when the addon contains binary assets tracked by `.gitattributes`
+- [Anomaly Modded Exes](https://github.com/themrdemonized/xray-monolith) with DLTX support
+- Escape From Tarkov Rifle Pack 4.7 by frostychun
+- Modular Attachment System: Vanilla Weapons by party_50
+
+The patch is intended for a setup that also uses 3DSS EFT Reposition/Pizza scope integration. Its late DLTX filename ensures that the AK-101 values are applied after the dependency overrides.
 
 ## Installation
 
@@ -30,19 +33,15 @@ To download and install the latest GitHub Release instead of the local files:
 
 `-Latest` derives the repository from the `origin` remote. Public releases need no token. For a private repository, set `GH_TOKEN` or `GITHUB_TOKEN` to a token that can read the repository. Local installation never uses the GitHub API.
 
-## Development
+## Scope
 
-Create a repository from this template, then clone it:
+The addon contains one DLTX section override:
 
-```powershell
-git clone https://github.com/<owner>/<repository>.git
-cd <repository>
-git lfs install
+```ini
+![wpn_ak101_hud]
 ```
 
-Put only the files shipped by the addon under `gamedata/`. Add standard Anomaly directories such as `textures`, `meshes`, `sounds`, or `shaders` only when the addon needs them. The tracked `.gitkeep` files only preserve the starter directories and are excluded from release ZIPs.
-
-For DLTX, the filename must identify the original root LTX file: `mod_<base-file-name>_sep_<module>.ltx`. For example, a patch to `system.ltx` can be named `mod_system_sep_economy.ltx`. Place it beside the root file it patches. Do not use DLTX syntax unless the addon declares Modded Exes as a requirement.
+It restores the four Frosty `aim_hud_offset_*` values and the four MAS `attach_base_hud_offset_*` values. No other weapon or HUD section is modified.
 
 ## Branching
 
@@ -59,6 +58,6 @@ Rerunning the same workflow keeps the same version and replaces the release asse
 
 The template tracks common binary game assets (`.dds`, `.ogf`, `.object`, `.ogg`, `.wav`, `.tga`, and `.png`) with Git LFS. Install Git LFS before adding those files and ensure CI has access to the LFS objects. Text files such as LTX, Lua scripts, Markdown, YAML, and PowerShell remain in normal Git history.
 
-## License
+## Credits and license
 
-No license is selected by this template. Replace `LICENSE` with the license appropriate for your original work before publishing. Do not grant rights to game assets or third-party material you do not own.
+The integration patch is released under the MIT License. Frosty's Rifle Pack, MAS, 3DSS EFT Reposition, S.T.A.L.K.E.R. Anomaly, and their assets remain subject to their respective licenses and are not redistributed here.
