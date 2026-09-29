@@ -2,7 +2,7 @@
 
 A minimal S.T.A.L.K.E.R. Anomaly DLTX compatibility addon for the AK-101 from Frosty's Escape From Tarkov Rifle Pack.
 
-The addon restores Frosty's AK-101 iron-sight ADS offsets while keeping the Modular Attachment System base attachment transform. It patches only `wpn_ak101_hud`; it does not replace weapon models, animations, sounds, scopes, balance values, or files from its dependencies.
+The addon keeps the Modular Attachment System ADS coordinates and restores its AK-101 base attachment transform after 3DSS EFT Reposition overrides. It patches only `wpn_ak101_hud`; it does not replace weapon models, animations, sounds, scopes, balance values, or files from its dependencies.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ The addon contains one DLTX section override:
 ![wpn_ak101_hud]
 ```
 
-It restores the four Frosty `aim_hud_offset_*` values and the four MAS `attach_base_hud_offset_*` values. No other weapon or HUD section is modified.
+It restores the four MAS `attach_base_hud_offset_*` values. The active MAS `aim_hud_offset_*` values remain untouched. No other weapon or HUD section is modified.
 
 ## Branching
 
