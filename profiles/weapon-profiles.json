@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "frosty_ak101",
+      "weapon_sections": [
+        "wpn_ak101"
+      ],
+      "hud_sections": [
+        "wpn_ak101_hud"
+      ],
+      "scope_group": "scope_group_picatinny_short",
+      "native_ads": {
+        "position": [-0.048482, 0.034709, -0.035991],
+        "rotation": [0.033765, 0.008463, 0.003010]
+      },
+      "mas_transform": {
+        "base_position": [-0.035000, 0.085600, -0.202476],
+        "base_rotation": [-0.009168, -0.011379, -0.006103],
+        "mount_position": [-0.000479, 0.081107, 0.014635],
+        "mount_rotation": [0.000000, 0.000000, 0.000000],
+        "scale": 1.0
+      }
+    }
+  ]
+}

@@ -42,6 +42,10 @@ jobs:
             exit 1
           fi
 
+      - name: Validate generated weapon profiles
+        shell: pwsh
+        run: ./tools/generate-profiles.ps1 -Check
+
       - name: Build addon ZIP
         env:
           ARCHIVE_NAME: ${{ steps.metadata.outputs.archive_name }}

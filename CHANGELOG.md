@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Replaced the one-off AK-101 patch with a declarative weapon-profile generator.
+- Made MAS scope ownership explicit: the addon patches weapon/HUD transforms only and never scope sections.
+- Added validation for unique weapon/HUD ownership, finite transforms, generated DLTX consistency, and the native iron-sight ADS invariant.
+- Pinned the AK-101 MAS scope group, mount transform, and scale in one reusable profile.
+
 ## v0.0.4
 
 - Restored the AK-101 attachment base expected by 3DSS EFT Reposition and PUSSY dynamic scopes.
